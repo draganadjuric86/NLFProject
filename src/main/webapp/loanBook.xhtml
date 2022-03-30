@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+<h:head>
+	<title>Book Loan</title>
+	<h:outputStylesheet name="css/main.css" />
+</h:head>
+<h:body>
+	<h:form>
+		<p:panelGrid id="panelgrid"
+			columns="1" layout="grid" style="width:600px;">
+			<p:outputLabel value="Book" for="book"
+				styleClass="outputlabel-lbl" />
+			<p:selectOneMenu id="book" autoWidth="true" required="true"
+				styleClass="selectonemenu-overview" value="#{bean.selectedBook}" style="width:450px;">
+				<f:selectItem itemLabel="Select book" value="#{null}" />
+				<f:selectItems value="#{bean.unissuedBooks}" var="book"
+					itemLabel="#{book.author} - #{book.title}" />
+				<f:converter converterId="bookConverter" />
+			</p:selectOneMenu>
+
+			<p:outputLabel value="Student" for="student"
+				styleClass="outputlabel-search" />
+			<p:selectOneMenu id="student" autoWidth="true" required="true" style="width:450px;"
+				styleClass="selectonemenu-overview" value="#{bean.selectedStudent}">
+				<f:selectItem itemLabel="Select student" value="#{null}" />
+				<f:selectItems value="#{bean.studentList}" var="student"
+					itemLabel="#{student}" />
+				<f:converter converterId="studentConverter" />
+			</p:selectOneMenu>
+
+			<p:commandButton value="Loan book" action="#{bean.submit}">
+			</p:commandButton>
+		</p:panelGrid>
+	</h:form>
+
+</h:body>
+</html>

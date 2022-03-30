@@ -1,0 +1,22 @@
+.datatable-overview.ui-datatable thead th,
+.datatable-overview.ui-datatable tbody,
+.datatable-overview.ui-datatable tbody tr,
+.datatable-overview.ui-datatable tbody td {
+	border: 1px solid GREY;
+}
+
+.column-65-center {
+	width: 65px;
+	text-align: center;
+}
+
+.outputlabel-lbl {
+	margin-left: 6px;
+}
+
+.selectonemenu-overview{
+	min-width: 100%;
+	width: 100%;
+	box-sizing: border-box;
+	border-color: #787878;
+}
