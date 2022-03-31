@@ -21,7 +21,7 @@
 	</context-param>
 
 	<welcome-file-list>
-		<welcome-file>test.xhtml</welcome-file>
+		<welcome-file>main.xhtml</welcome-file>
 	</welcome-file-list>
 
 	<data-source>
